@@ -1682,6 +1682,16 @@ export const commonTranslations: Translations = {
     zh_TW: '關閉其他分頁',
     ja: '他のタブを閉じる',
   },
+  'menu.tab.random_tab': {
+    en: 'Go to Random Tab',
+    de: 'Go to Random Tab',
+    hu: 'Go to Random Tab',
+    pl: 'Go to Random Tab',
+    ru: 'Go to Random Tab',
+    zh_CN: 'Go to Random Tab',
+    zh_TW: 'Go to Random Tab',
+    ja: 'Go to Random Tab',
+  },
   // - Tabs panel
   'menu.tabs_panel.mute_all_audible': {
     en: 'Mute all audible tabs',
@@ -1861,6 +1871,15 @@ export const commonTranslations: Translations = {
     ru: 'Удалить панель',
     zh: '移除面板',
     ja: 'パネルを削除',
+  },
+  'menu.tabs_panel.random_tab': {
+    en: 'Go to Random Tab',
+    de: 'Go to Random Tab',
+    hu: 'Go to Random Tab',
+    pl: 'Go to Random Tab',
+    ru: 'Go to Random Tab',
+    zh: 'Go to Random Tab',
+    ja: 'Go to Random Tab',
   },
   // - History
   'menu.history.open': {

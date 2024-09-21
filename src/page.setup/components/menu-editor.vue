@@ -101,7 +101,7 @@
     .ctrls
       .btn(@click="resetBookmarksMenu") {{translate('menu.editor.reset')}}
       .btn(@click="createSeparator('bookmarks')") {{translate('menu.editor.create_separator')}}
-  
+
   section(ref="menuEditorBookmarksPanelEl" @click.stop @wheel="moveSelected($event, 'bookmarksPanel')")
     h2 {{translate('menu.editor.bookmarks_panel_title')}}
 
@@ -201,6 +201,7 @@ const TABS_MENU_OPTS: Record<string, string> = {
   closeTabsAbove: 'menu.tab.close_above',
   closeTabsBelow: 'menu.tab.close_below',
   closeOtherTabs: 'menu.tab.close_other',
+  goToRandomTabFromGroup: 'menu.tab.random_tab',
 }
 
 const TABS_PANEL_MENU_OPTS: Record<string, string> = {
@@ -225,6 +226,7 @@ const TABS_PANEL_MENU_OPTS: Record<string, string> = {
   sortAllTabsByUrlDescending: 'menu.tabs_panel.sort_all_by_url_des',
   sortAllTabsByAccessTimeAscending: 'menu.tabs_panel.sort_all_by_time_asc',
   sortAllTabsByAccessTimeDescending: 'menu.tabs_panel.sort_all_by_time_des',
+  goToRandomTabFromPanel: 'menu.tabs_panel.random_tab',
 }
 
 const BOOKMARKS_MENU_OPTS: Record<string, string> = {

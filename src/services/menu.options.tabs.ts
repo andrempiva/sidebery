@@ -642,6 +642,24 @@ export const tabsMenuOptions: Record<string, () => MenuOption | MenuOption[] | u
     return option
   },
 
+  goToRandomTabFromGroup: () => {
+    const tabIds = Selection.get()
+
+    const option: MenuOption = {
+      label: 'Go to Random Tab',
+      icon: 'icon_reload',
+      onClick: () => {
+        const pick = tabIds[Math.floor(Math.random() * tabIds.length)];
+	      browser.tabs.update(pick, { active: true });
+      }
+    }
+
+    const firstTab = Tabs.byId[Selection.getFirst()]
+    if (!firstTab || tabIds.length <= 1) return
+
+    return option
+  },
+
   // ---
   // -- Panel options
   // -
@@ -907,6 +925,25 @@ export const tabsMenuOptions: Record<string, () => MenuOption | MenuOption[] | u
       onClick: () => TabsSorting.sort(TabsSorting.By.ATime, ids, -1, true),
     }
     if (!Settings.state.ctxMenuRenderInact && option.inactive) return
+    return option
+  },
+
+  goToRandomTabFromPanel: () => {
+    const panel = Sidebar.panelsById[Selection.getFirst()]
+
+    if (!Utils.isTabsPanel(panel)) return
+
+    const tabIds = panel.tabs.map(t => t.id) ?? []
+
+    const option: MenuOption = {
+      label: translate('menu.tabs_panel.random_tab'),
+      icon: 'icon_reload',
+      onClick: () => {
+        const pick = tabIds[Math.floor(Math.random() * tabIds.length)];
+	      browser.tabs.update(pick, { active: true });
+      }
+    }
+
     return option
   },
 }
